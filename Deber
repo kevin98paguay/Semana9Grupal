@@ -1,0 +1,204 @@
+clase Empleado:
+    aumentarId = 0
+    def __init __ (self, nombr = '', sueld = 0, fechaIngre = ''):
+        self .__ id = Empleado.aumentarId
+        self.nombre = nombr
+        self.sueldo = sueld
+        self.fechaIngreso = fechaIngre
+        Empleado.aumentarId + = 1
+
+    def mostrarEmpleado (yo):
+        imprimir (self .__ id)
+        imprimir (self.nombre)
+        imprimir (self.sueldo)
+        imprimir (self.fechaIngreso)
+
+
+clase Departamento:
+    aumentarId = 0
+    def __init __ (self, emple = '', descr = ''):
+        self .__ id = Departamento.aumentarId
+        self.empleado = emple
+        self.descripcion = descr
+        Departamento.aumentarId + = 1
+
+    def mostrarDepartamento (self):
+        imprimir (self .__ id)
+        imprimir (self.descripcion)
+
+
+clase Empresa:
+    aumentarId = 0
+    def __init __ (self, depar = '', emple = '', direc = '', telef = '', razonSocia = '', ruc = ''):
+        self .__ id = Empresa.aumentarId
+        self.departamento = depar
+        self.empleado = emple
+        self.direccion = direc
+        self.telefono = telef
+        self.razonSocial = razonSocia
+        self.ruc = ruc
+        Empresa.aumentarId + = 1
+
+    def mostrarEmpresa (yo):
+        imprimir (self .__ id)
+        imprimir (self.direccion)
+        imprimir (auto.telefono)
+        imprimir (self.razonSocial)
+        imprimir (self.ruc)
+
+
+clase Obrero (Empleado):
+    aumentarId = 0
+    def __init __ (self, nombr = '', sueld = 0, fechaIngre = '', sindi = False, contrColec = False):
+        super () .__ init __ (nombr, sueld, fechaIngre)
+        self .__ id = Obrero.aumentarId
+        self.sindicato = sindi
+        self.contratoColectivo = contrColec
+        Obrero.aumentarId + = 1
+
+    def mostrarObrero (yo):
+        imprimir (self .__ id)
+        imprimir (self.sindicato)
+        imprimir (self.contratoColectivo)
+
+
+clase Administrativo (Empleado):
+    aumentarId = 0
+    def __init __ (self, nombr = '', sueld = 0, fechaIngre = '', comis = False):
+        super () .__ init __ (nombr, sueld, fechaIngre)
+        self .__ id = Administrativo.aumentarId
+        self.comision = comis
+        Administrativo.aumentarId + = 1
+
+    def mostrarAdministrativo (auto):
+        imprimir (self .__ id)
+        imprimir (self.comision)
+
+
+clase Prestamos:
+    aumentarId = 0
+    def __init __ (self, fecha = '', valor = 0, numerPago = 0, emple = '', estad = False):
+        self .__ id = Prestamos.aumentarId
+        self.fecha = fecha
+        self.valor = valor
+        self.numPagos = numerPago
+        if self.numPagos == 0: self.cuota = 0 # Cuando numeroPagos sea == 0 evita el error.
+        else: self.cuota = self.valor / self.numPagos
+        self.empleado = emple
+        self.saldo = self.cuota * self.numPagos
+        self.estado = estad
+        Prestamos.aumentarId + = 1
+
+    def mostrarPrestamos (yo):
+        imprimir (self .__ id)
+        imprimir (self.fecha)
+        imprimir (auto.valor)
+        imprimir (self.numPagos)
+        imprimir (self.cuota)
+        imprimir (self.saldo)
+        imprimir (self.estado)
+
+
+clase Sobretiempo:
+    aumentarId = 0
+    def __init __ (self, horasRecar = 0, horasExtra = 0, emple = '', fecha = '', estad = False):
+        self .__ id = Sobretiempo.aumentarId
+        self.horasRecargo = horasRecar
+        self.horasExtraordinarias = horasExtra
+        self.empleado = emple
+        self.fecha = fecha
+        self.estado = estad
+        Sobretiempo.aumentarId + = 1
+
+    def mostrarSobretiempo (self):
+        imprimir (self .__ id)
+        imprimir (self.horasRecargo)
+        imprimir (self.horasExtraordinarias)
+        imprimir (self.fecha)
+        imprimir (self.estado)
+
+
+clase Deducciones:
+    aumentarId = 0
+    def __init __ (self, comis = 0, antig = 0):
+        self .__ id = Deducciones.aumentarId
+        self.iess = float (input ('iess:'))
+        self.comision = comis
+        self.antiguedad = antig
+        Deducciones.aumentarId + = 1
+
+    def mostrarDeducciones (self):
+        imprimir (self .__ id)
+        imprimir (self.iess)
+        imprimir (self.comision)
+        imprimir (self.antiguedad)
+
+
+clase Nomina:
+    aumentarId = 0
+    def __init __ (self, emple = '', fecha = '', sueld = 0, sobreTiemp = '', comis = 0, antig = 0, iess = 0, perst = ''):
+        self .__ id = Nomina.aumentarId
+        self.empleado = emple
+        self.fecha = fecha
+        self.sueldo = sueld
+        self.sobretiempo = sobreTiemp
+        self.comision = comis
+        self.antiguedad = antig
+        self.totIng = self.sueldo + self.sobretiempo.horasRecargo + self.sobretiempo.horasExtraordinarias + self.antiguedad
+        self.iess = iess * self.sueldo
+        self.prestamo = presto
+        self.totDes = self.comision + self.iess + self.prestamo.cuota
+        self.liquidoRecibir = self.totIng - self.totDes
+        Nomina.aumentarId + = 1
+
+    def mostrarNomina (self):
+        imprimir (self .__ id)
+        imprimir (self.fecha)
+        imprimir (self.sueldo)
+        imprimir (self.comision)
+        imprimir (self.antiguedad)
+        imprimir (self.totIng)
+        imprimir (self.iess)
+        imprimir (self.totDes)
+        imprimir (self.liquidoRecibir)
+
+
+# emple = Obrero ("Kevin Alexander", 1800.50, "2021-02-01", True, True)
+emple = Administrativo ("Kevin Alexander", 1800.50, "2021-02-01", True)
+empre = Empresa (Departamento (emple, 'Departamento de Recursos Humanos'), emple, 'Canton Milagro', '0912345678', 'Generar emprendimientos', '0217362514364')
+# sobre_tiemp = Sobretiempo (0, 0, emple, "#### - ## - ##", Falso)
+sobre_tiemp = Sobretiempo (4.50, 12.13, emple, "2021-02-02", True)
+# deduc = Deducciones (1.00, 2.00)
+deduc = Deducciones (12.00, 5.75)
+# presto = Prestamos ("#### - ## - ##", 0, 0, emple, False)
+presto = Prestamos ("2021-02-20", 350, 5, emple, True)
+nomin = Nomina (empre.empleado, "2021-02-29", emple.sueldo, sobre_tiemp, deduc.comision, deduc.antiguedad, deduc.iess, presst)
+
+impresión("")
+imprimir ("MOSTRAR EMPRESA")
+empre.mostrarEmpresa ()
+impresión("")
+imprimir ("MOSTRAR EMPLEADO")
+emple.mostrarEmpleado ()
+# impresión("")
+# print ("MOSTRAR EMPLEADO OBRERO")
+# emple.mostrarObrero ()
+impresión("")
+imprimir ("MOSTRAR EMPLEADO ADMINISTRATIVO")
+emple.mostrarAdministrativo ()
+impresión("")
+imprimir ("MOSTRAR EMPLEADO DEPARTAMENTO")
+empre.departamento.mostrarDepartamento ()
+impresión("")
+imprimir ("MOSTRAR SOBRETIEMPO")
+sobre_tiemp.mostrarSobretiempo ()
+impresión("")
+imprimir ("MOSTRAR DEDUCCIONES")
+deduc.mostrarDeducciones ()
+impresión("")
+imprimir ("MOSTRAR PRESTAMOS")
+prest.mostrarPrestamos ()
+impresión("")
+imprimir ("MOSTRAR NOMINA")
+nomin.mostrarNomina ()
+impresión("")
